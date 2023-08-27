@@ -35,6 +35,7 @@
 .news-source{
     margin-block:12px;
 }
+
 @media screen and (max-width:600px){
     .navbar-nav{
         margin: 0%;
