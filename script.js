@@ -1,6 +1,29 @@
-const url = "https://news-api-vaqm.onrender.com/news"
-window.addEventListener("load",fetchnews())
-async function fetchnews(){
+let India = document.getElementById('India');
+let Science = document.getElementById('Science');
+let Education = document.getElementById('Education');
+let World = document.getElementById('World');
+
+const url = 'https://news-api-vaqm.onrender.com/news';
+window.addEventListener("load",fetchnews(url))
+India.addEventListener('click', (e)=>{
+    var url = 'https://news-api-vaqm.onrender.com/news-india';
+    window.addEventListener("load",fetchnews(url))
+})
+Science.addEventListener('click', (e)=>{
+    var url = 'https://news-api-vaqm.onrender.com/news-science';
+    window.addEventListener("load",fetchnews(url))
+})
+Education.addEventListener('click', (e)=>{
+    var url = 'https://news-api-vaqm.onrender.com/news-education';
+    window.addEventListener("load",fetchnews(url))
+})
+World.addEventListener('click', (e)=>{
+    var url = 'https://news-api-vaqm.onrender.com/news-world';
+    window.addEventListener("load",fetchnews(url))
+})
+
+
+async function fetchnews(url){
     try {
         const response= await fetch(`${url}`)
         const data = await response.json()
