@@ -3,14 +3,17 @@ let Science = document.getElementById('Science');
 let Education = document.getElementById('Education');
 let World = document.getElementById('World');
 let logo = document.getElementById('navbarlogo');
-function getData() {
-    var spinner = document.getElementById("spinner");
-    spinner.style.display = "block";
-    const url = 'https://news-api-vaqm.onrender.com/news';
-    window.addEventListener("load", fetchnews(url))
-    spinner.style.display = "none";
+const loader = document.querySelector("#loading");
+function dispalyLoading(){
+    loader.classList.add("display");
+    setTimeout(()=>{
+        loader.classList.remove("display");
+    },50000)
 }
-getData();
+
+const url = 'https://news-api-vaqm.onrender.com/news';
+window.addEventListener("load", fetchnews(url))
+
 
 logo.addEventListener('click', (e) => {
     var url = 'https://news-api-vaqm.onrender.com/news';
@@ -35,6 +38,7 @@ World.addEventListener('click', (e) => {
 
 
 async function fetchnews(url) {
+    dispalyLoading()
     try {
         const response = await fetch(`${url}`)
         const data = await response.json()
