@@ -1,3 +1,12 @@
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    /* transform: translate(-50%, -50%); */
+    display: none;
+ }
 .navbar-logo{
     margin-left: 2%;
     height: 120px;
