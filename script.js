@@ -10,6 +10,9 @@ function dispalyLoading(){
         loader.classList.remove("display");
     },50000)
 }
+function hideLoading(){
+    loader.classList.remove("display");
+}
 
 const url = 'https://news-api-vaqm.onrender.com/news';
 window.addEventListener("load", fetchnews(url))
@@ -47,6 +50,7 @@ async function fetchnews(url) {
     } catch (error) {
         console.log(error);
     }
+    hideLoading();
 }
 function bindData(data) {
     const row = document.getElementById("Row");
@@ -55,6 +59,9 @@ function bindData(data) {
 
     data.forEach(element => {
         const cards = document.createElement("div");
+        const alink = document.createElement("a");
+        alink.href=element.link;
+        alink.id='links'
         const card = document.createElement("div");
         const cardHeader = document.createElement("div");
         const img = document.createElement("img");
@@ -67,8 +74,9 @@ function bindData(data) {
             cards.classList.add(i);
         }
         if (element.img_link) {
-            document.body.appendChild(cards)
-            cards.appendChild(card);
+            // document.body.appendChild(cards)
+            cards.appendChild(alink);
+            alink.appendChild(card)
             card.classList.add("card")
             card.appendChild(cardHeader);
             cardHeader.classList.add("card-header")
