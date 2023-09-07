@@ -14,36 +14,32 @@ function hideLoading(){
     loader.classList.remove("display");
 }
 
-const url = 'https://news-api-vaqm.onrender.com/news';
-window.addEventListener("load", fetchnews(url))
+const url = 'https://news-api-vaqm.onrender.com/';
+window.addEventListener("load", fetchnews('news'))
 
 
 logo.addEventListener('click', (e) => {
-    var url = 'https://news-api-vaqm.onrender.com/news';
-    window.addEventListener("load", fetchnews(url))
+    fetchnews('news')
 })
 India.addEventListener('click', (e) => {
-    var url = 'https://news-api-vaqm.onrender.com/news-india';
-    window.addEventListener("load", fetchnews(url))
+    fetchnews('news-india');
 })
 Science.addEventListener('click', (e) => {
-    var url = 'https://news-api-vaqm.onrender.com/news-science';
-    window.addEventListener("load", fetchnews(url))
+    
+    fetchnews('news-science');
 })
 Education.addEventListener('click', (e) => {
-    var url = 'https://news-api-vaqm.onrender.com/news-education';
-    window.addEventListener("load", fetchnews(url))
+    fetchnews('news-education');
 })
 World.addEventListener('click', (e) => {
-    var url = 'https://news-api-vaqm.onrender.com/news-world';
-    window.addEventListener("load", fetchnews(url))
+    fetchnews('news-world');
 })
 
 
-async function fetchnews(url) {
+async function fetchnews(query) {
     dispalyLoading()
     try {
-        const response = await fetch(`${url}`)
+        const response = await fetch(`${url}${query}`)
         const data = await response.json()
         console.log(data);
         bindData(data);
