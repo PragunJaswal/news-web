@@ -1,3 +1,9 @@
+body{
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    
+}
+
 #loading{
     text-align: center;
     border-radius: 100%;
@@ -10,9 +16,12 @@
 
 .navbar-logo{
     margin-left: 2%;
-    height: 120px;
-    width: 120px;
+    
+    text-decoration: none;
+    color: black;
 }
+
+
 .navbar-logo>img{
     width: 100%;
     border-radius: 50%;
@@ -33,6 +42,11 @@
     margin-top: 20px;
 }
 .card{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    
+
+
     margin-top: 20px;
 }
 .card:hover{
