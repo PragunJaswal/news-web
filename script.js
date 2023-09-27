@@ -65,7 +65,8 @@ function bindData(data) {
         const h3 = document.createElement("h3");
         const h6 = document.createElement("h6");
         const p = document.createElement("p");
-        const classes = ["col-md-4", "col-sm-12"]
+        const button = document.createElement("button");
+        const classes = ["col-md-4", "col-sm-12",'size']
         for (const i of classes) {
             cards.classList.add(i);
         }
@@ -80,10 +81,16 @@ function bindData(data) {
             img.src = element.img_link
             card.appendChild(cardContent);
             cardContent.appendChild(h3);
+            h3.classList.add('title')
             h3.textContent = element.title
             cardContent.appendChild(h6);
             cardContent.appendChild(p);
             p.textContent = element.description
+            cardContent.appendChild(button);
+            button.innerHTML='click'
+            button.classList.add('btn')
+            button.classList.add('btn-warning')
+            
             row.appendChild(cards);
         }
 
