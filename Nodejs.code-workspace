@@ -1,10 +1,16 @@
 {
     "folders": [
         {
-            "path": "."
+            "path": "../../../Scaler-Open-Source-contributions/New-Repo"
         },
         {
             "path": "../Portfolio/portfolio-project"
+        },
+        {
+            "path": "."
         }
-    ]
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "news-web"
+    }
 }
